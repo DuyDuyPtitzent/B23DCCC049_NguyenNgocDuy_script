@@ -1,0 +1,69 @@
+<!--<table border="1">
+    <tr>
+        <td>Bảng 1</td>
+        <td>Bảng 2</td>
+        <td>Bảng 3</td>
+    </tr>
+</table>-->
+
+
+<!--<table style="width: 20%;">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points</th>
+    </tr>
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+    </tr>
+</table>-->
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Tables in a Row</title>
+<style>
+    .container {
+        display: flex; /* Sử dụng flexbox để căn chỉnh các bảng theo hàng ngang */
+    }
+    .table-wrapper {
+        flex: 1; /* Chia đều không gian cho mỗi bảng */
+        margin-right: 10px; /* Khoảng cách giữa các bảng */
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;}
+    td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <table>
+                        <td ><img src="anh-1.png"> 
+                        <img src="anh-2.png"></td>     
+                    </tr>                          
+            </table>
+</body>   
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <tr><td><img src="anh-3.jpeg"></td></tr>
+                </tr>    
+            </table>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <!-- Table 3 Content -->
+            </table>
+        </div>
+    </div>
+</body>
+</html>
