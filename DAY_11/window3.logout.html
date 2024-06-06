@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <h2>Admin Page</h2>
+    <button id="logoutButton">Logout</button>
+
+    <script>
+        // Kiểm tra trạng thái đăng nhập khi tải trang
+        if (!sessionStorage.getItem('loggedIn2')) {
+            window.location.href = 'window2.login.html'; // Chuyển hướng về trang login.html nếu chưa đăng nhập
+        }
+
+        // Thêm sự kiện cho nút Logout
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            sessionStorage.removeItem('loggedIn2'); // Xóa trạng thái đăng nhập
+            window.location.href = 'window2.login.html'; // Chuyển hướng về trang login.html
+        });
+    </script>
+</body>
+</html>

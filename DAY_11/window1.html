@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng nhập</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #login-container {
+        width: 400px;
+        height:300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #5e5e5e;
+        border-radius: 7px;
+    }
+    #login-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    #login-container button {
+        width: 100%;
+        padding: 15px;
+        background-color: #007bff;
+        color: #302b2b;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div id="login-container">
+    <h1>Đăng nhập</h1>
+    <input type="text" id="duy123" placeholder="Tên đăng nhập">
+    <input type="password" id="1234" placeholder="Mật khẩu">
+    <button onclick="checkLogin()">Đăng nhập</button>
+</div>
+
+<script>
+    function checkLogin() {
+        var username = document.getElementById("duy123").value;
+        var password = document.getElementById("1234").value;
+
+        // Kiểm tra thông tin đăng nhập
+        if (username === "duy123" && password === "1234") {
+            // Nếu thông tin đúng, chuyển hướng đến trang admin.html
+            window.location.href = "admin.html";
+        } else {
+            // Nếu thông tin sai, hiển thị thông báo lỗi và yêu cầu nhập lại
+            alert("Thông tin đăng nhập không đúng. Vui lòng thử lại.");
+        }
+    }
+</script>
+
+</body>
+</html>

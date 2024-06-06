@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="window2.css">
+</head>
+<body>
+    <h2>Login Page</h2>
+    <form id="loginForm">
+        <input type="text" id="duy" placeholder="Tên đăng nhập" required>
+        <input type="password" id="1" placeholder="Mật khẩu" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngăn chặn form gửi đi mặc định
+            const username = document.getElementById('duy').value;
+            const password = document.getElementById('1').value;
+
+            // Giả sử kiểm tra đăng nhập thành công
+            if (username === 'duy' && password === '1') {
+                sessionStorage.setItem('loggedIn2', 'true'); // Lưu trạng thái đăng nhập vào sessionStorage
+                window.location.href = 'window3.logout.html'; // Chuyển hướng tới trang admin.html
+            } else {
+                alert('Tên đăng nhập hoặc mật khẩu không đúng. Xin vui lòng thử lại.'); // Thông báo nếu thông tin đăng nhập không đúng
+            }
+        });
+    </script>
+</body>
+</html>
