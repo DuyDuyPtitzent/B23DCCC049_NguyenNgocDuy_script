@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <title>ES6</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+<body>
+    <script>
+        // ES6 variables (nên sử dụng let trong js hơn var)
+        // sự khác nhau của let với var
+        let x = 5 
+        if (x == 5){
+            let x = 10
+            document.write(x + "<br>");
+        }   // output = 10 
+
+        document.write(x + "<br>") ;
+            // output = 5
+        //VAR
+        var y = 15
+        if (y == 15){
+            var y = 20
+            document.write(y + "<br>");
+        }   // output = 20 
+
+        document.write(y + "<br>") ;
+            // output = 20
+        
+        // tham số mặc định
+        // một số trường hợp người dùng khi nhập function thiếu tham số thì ta có thể chỉ định giá trị của tham số thiếu đó
+        function nhân(a,b=1){
+            return a*b;
+        }
+        document.write(nhân(3,4) + "<br>");
+            // output = 12
+        document.write(nhân(3) + "<br>");
+            // output = 3
+    
+        // spread syntax  cho phép một phép lặp lại các phần tử của mãng (array) hay đối tượng (object).
+        // Cú pháp spread được thể hiện dưới dạng dấu ...
+        const oldArray = [1, 2, 3];
+        const newArray = [...oldArray, 4, 5];
+        document.write(newArray  + "<br>");
+            /* ouput: [1, 2, 3, 4, 5] */
+             /* nếu không có thì sẽ in ra (3) [Array(3), 4, 5] */
+        
+        //  rest parameters  là tham số đại diện cho những tham số không được khai báo.
+        //  Khi sử dụng khai báo đại diện bên trong một function thì khi gọi function sẽ không giới hạn giá trị truyền vào.
+        //  Đại diện này được ký hiệu bằng khai báo ...name (cẩn thận coi chừng nhầm lẫn với spread syntax).
+        function number(num1, num2, ...numOther){
+        document.write("x:", num1 + "<br>"); 
+        document.write("y:", num2 + "<br>");
+        document.write("Other number:", numOther + "<br>");
+        }
+        number("one", "two", "three", "four", "five", "six");
+        /* ouput: 
+        x: one
+        y: two
+        Other number: (4) ["three", "four", "five", "six"] */
+
+        // destructuring cho phép chúng ta dễ dàng sử dụng các giá trị phần tử của Array hoặc Object.
+        // Destructuring rất hữu dụng khi làm việc với function có đối số.
+        const array = [1, 2, 3];
+        const [a, b] = array;
+        document.write(a + "<br>"); /* output: 1 */
+        document.write(b + "<br>"); /* output: 2 */
+        document.write(array + "<br>"); /* output: [1, 2, 3] */
+
+        // ES6 arrow function
+        // ES6 arrow function, viết function dưới dạng mũi tên =>.
+        // Cách viết này linh hoạt, tùy biến function hơn so với cách viết cũ.
+        var member = (name, age) => {
+            document.write(name, age + "<br>");
+        }
+        member("Dương Minh Trí", 4); /* output: "Dương Minh Trí" 4 */
+
+        // ES6 Classes
+        // Classes là một dạng function đặc biệt, thay vì sử dụng từ function thì chúng ta sử dụng class và thuộc tính được gán bên trong phương thức constructor().
+        // Classes có tính kế thừa (inheritance), dễ dàng kế thừa tất cả phương thức từ Classes đã có trước đó.
+        class Member {
+            constructor() {
+                this.name = "Dương Minh Trí";
+            }
+                // sd method
+            memberName() {
+                return this.name;
+            }
+        }
+                // tính kế thừa
+        class User extends Member {
+            constructor(name, age) {
+                super(name);
+                this.age = 4;
+            }
+
+            memberInfo() {
+                return this.memberName() + 'Tuổi:' + this.age;
+            }
+        }
+            var m = new User();
+            document.write(m.memberInfo()); 
+                /* ouput: "Dương Minh Trí" Tuổi:4 */
+        
+        // Javascript - export & import
+        /* Để dễ làm việc, quản lý các chức năng file javascript, chúng ta thường tách các phần riêng biệt ra riêng từng file khác nhau, khi đó nhu cầu lồng ghép các function của file này vào file kia để sử dụng các function đã có là khó tránh khỏi, khi này ta sẽ sử dụng: */
+        // Câu lệnh export để các file chấp nhận việc xuất các function
+        // Câu lệnh import để file liên kết với các function của file được export.
+        /* trong file  export: member.js
+           const member = {
+            name = "Dương Minh Trí"
+        }
+        export default member; 
+            trong file  import: App.js
+            import member from './member.js';
+            document.write(member()); */
+    </script>
+</body>
