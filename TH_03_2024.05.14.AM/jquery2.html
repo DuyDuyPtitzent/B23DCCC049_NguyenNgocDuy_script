@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <h1>List Item</h1>
+        <button id="buttiontion" type="">Add</button>
+<input type="text" id="newinput"
+placeholder="New Item">
+    <div id="listitem"></div>
+<script>
+$(document).ready(function(){
+    $("#buttiontion").click(function(){
+        var inputValue =
+        $("#newinput").val();
+        if(inputValue !==""){
+            $('#listitem').append("<li>"+inputValue);
+                $("#newinput").val("");
+        };
+    });
+});
+</script>
+
+</body>
+</html>
