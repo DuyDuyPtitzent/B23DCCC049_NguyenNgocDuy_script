@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mang = [5,77,2,-9,42,475,24,,47,12]; // sắp xếp hàng theo thứ tự tăng dần
+        
+        function tangdan (n){
+            document.write(n.sort(function(a,b){return a-b}));
+        }
+        tangdan(mang)// hàm loại bỏ giá trị trùng lặp
+        
+        function loaibo (arr){
+            return Array.from(new Set(arr))
+        } 
+        document.write(loaibo(mang));
+    </script>
+</body>
+</html>

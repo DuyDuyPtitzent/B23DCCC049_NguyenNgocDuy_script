@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+     var mang = [9,63,8,55,15,3,39,-4,86];
+     // tim so lon nhat
+     function lonnhat (array){
+        var max = array[0];
+        for (var i=0;i<array.length;i++){
+            if (max<array[i]){
+                max = array[i];
+            }
+        }
+        document.write("Số lớn nhất là " ,max,'<br>');
+     }
+     lonnhat(mang)
+     // timf số chính phương
+     function chinhphuong (number){
+        var mangCP = [];
+        for ( var i = 0; i < number.length; i++){
+            if (number[i] > 0){
+                var canbac2 = Math.sqrt(number[i]);
+                if (canbac2 == Math.floor(canbac2)){
+                    mangCP.push(number[i])
+                }
+            } 
+        }
+       return mangCP
+     }
+     document.write('Chính phương của mảng là',chinhphuong(mang),"<br>")
+     // hàm tìm số lớn hơn trung bình cộng
+     function solonhonTBC (array){
+        var sum = 0;
+        for ( var i = 0; i < array.length; i++){
+            sum += array[i]
+        }
+        trungbinh = sum/array.length;
+        var newarray=[]
+        for ( var i = 0; i < array.length; i++){
+            if (array[i] > trungbinh){
+                newarray.push(array[i])
+            }
+        }
+        return newarray
+    }    
+    document.write('Lớn hơn trung bình cộng là ',solonhonTBC(mang),"<br>")
+    // hàm tính các số trung bình cộng không âm của mảng
+    function mangkhongam (array){
+        var sum = 0
+        var number = 0
+        for ( var i = 0; i < array.length; i++){
+            if (array[i]>=0){
+                number += 1
+                sum += array[i]
+            }
+        }
+        return sum/number
+    }
+    document.write("Trung bình các số không âm là ",mangkhongam(mang))
+   </script>   
+</body>
+</html>
