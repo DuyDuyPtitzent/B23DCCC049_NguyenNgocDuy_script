@@ -1,0 +1,40 @@
+<!DOCTYPE html>>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>   
+    <body>
+        <input type="text" id="taskInput" />
+        <button id="addTask">Thêm Nhiệm vụ</button>
+        <ul id="taskList"></ul>
+
+        <script>
+                $(document).ready(function(){
+                $("#togglePassword").click(function(){
+                    var passwordField = $("#passwordInput");
+                    var passwordFieldType = passwordField.attr('type');
+                    
+                    if(passwordFieldType === 'password') {
+                        passwordField.attr('type', 'text');
+                        $(this).text('Ẩn Mật khẩu');
+                    } else {
+                        passwordField.attr('type', 'password');
+                        $(this).text('Hiển thị Mật khẩu');
+                    }
+                });
+                
+                $("#addTask").click(function(){
+                    var taskValue = $("#taskInput").val();
+                    if(taskValue !== ''){
+                        $("#taskList").append("<li class='task'>" + taskValue + "</li>");
+                        $("#taskInput").val('');
+                    }
+                });
+                
+                $(document).on("click", ".task", function(){
+                    $(this).css("color", "red");
+                });
+            });
+        </script>
+    </body> 
+</html>
