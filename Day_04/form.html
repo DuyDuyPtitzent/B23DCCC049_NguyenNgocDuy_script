@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table ,th {
+  border: 1px solid rgb(19, 17, 17);
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<table style="width:100%">
+  <p><th colspan="2"style="font-size: 50px;color:rgb(8, 127, 67)">Create Ancount </th> 
+  </p>
+<tr><form action="/action_page.php">
+     <tr><td>           
+                      <label for="fname"><b style="color:rgb(8, 127, 67)">First name:</b></label></br>
+                      <input type="text" id="fname" name="fname" value=" "><br>
+                </td>
+                      
+                  <td label for="lname"><b style="color:rgb(8, 127, 67)">Last name:</b></label><br>
+                      <input type="text" id="lname" name="lname" value=""><br>
+                  </td>
+              </tr>
+
+              <tr> <td colspan="2" action="/action_page.php" novalidate></action>
+                                    <label for = "email"><b style="color:rgb(8, 127, 67)"> Email:</b> </label><br>
+                <input type="text" id ="email" name="email" style="width:1200px"> 
+                  </td>
+              </tr>
+
+              <tr> <td >
+                <label for="pword"><b style="color:rgb(8, 127, 67)">Password:</b></label><br>
+                <input type="text" id ="password" name="password" value="">
+                  </td>
+                  <td label for="cpword"><b style="color:rgb(8, 127, 67)">Confirm Password:</b></label>
+                  <input type="text" id="cpword" name="cpword" value="">
+                  </td>
+              </tr>
+
+              <tr><td>
+                <label for="pword"><b style="color:rgb(8, 127, 67)">GENDER:</b></label><br>
+                <input type="radio" id="male" name="gender" value="MALE">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="FEMALE">
+                <label for="female">Female</label><br>
+                </td>
+                <td ><br>
+                <label for="pword"><b style="color:rgb(8, 127, 67)">Hobbies:</b></label><br>
+                <input type="checkbox" id="music" name="sothich1" value="Music">
+                <label for="music"> Music</label><br>
+                <input type="checkbox" id="sports" name="sothich2" value="Sports">
+                <label for="sports"> Sports </label><br>
+                <input type="checkbox" id="travel" name="sothich3" value="Travel">
+                <label for="travel"> Travel </label><br><br>
+              </td></tr> 
+              
+              <tr><td >
+                <label for="soincome"><b style="color:rgb(8, 127, 67)">Source Of Income:</b></label>
+                <select id="soincome" name="soincome" size="2">
+                <option value="Employed">Employed</option></td>
+                  <td  method="get">
+                    <label for="icome">Income:</label><br>
+                    <input type ="range" id="icome" name="icome" min="0" max="20">
+                  </td>
+              </tr>
+              <tr><td ><br>
+                  <label for="myfile"><b style="color:rgb(8, 127, 67)">Upload Profile Picture:</b></label><br>
+                  <input type="file" id="myfile" name="myfile"></td>
+                  <td action="/action_page.php"><br>
+                  <label for="age"><b style="color:rgb(8, 127, 67)">Age:</b></label><br>
+                  <input tye="age" id="age" name="age"></td>
+              </tr>
+              <tr><td><br>
+                <label for="bio"><b style="color:rgb(8, 127, 67)">Bio:</b></label><br>
+              <textarea name="bio" style="width:900px; height:60px;"></textarea></td></tr>
+              <p><td colspan="2"style="font-size: 50px;color:rgb(8, 127, 67)"><b><input style="color:rgb(8, 127, 67)" type="submit" value="Creat"></b></td>
+              </p>
+        </form>
+</tr>
+</table>
+</body>
+</html>
